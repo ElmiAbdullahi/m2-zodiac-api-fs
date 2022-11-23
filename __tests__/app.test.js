@@ -22,3 +22,14 @@ describe('zodiac routes', () => {
     expect(res.body).toEqual(aquarius);
   });
 });
+describe('hSigns routes', () => {
+  it('/horoscope/:id should return horoscope by sign', async () => {
+    const res = await request(app).get('/horoscope/gemini');
+    const gemini = {
+      id: '5',
+      sign: 'gemini',
+      horoscope: 'Gingerbeer',
+    };
+    expect(res.body).toEqual(gemini.horoscope);
+  });
+});
